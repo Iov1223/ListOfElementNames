@@ -11,8 +11,16 @@ namespace ListOfElementNames
 {
     public partial class Form1 : Form
     {
-        Point selPoint;
-        Rectangle mRect;
+        private Point rectPoint;
+        private Rectangle myRect;
+        private List<Control> list = new List<Control>();
+        private void GetAllControl(Control c, List<Control> list)
+        {
+            foreach (Control control in c.Controls)
+            {
+                list.Add(control);
+            }
+        }
         public Form1()
         {
             InitializeComponent();
@@ -23,30 +31,42 @@ namespace ListOfElementNames
             if (e.Button == MouseButtons.Left)
             {
                 Point p = e.Location;
-                int x = Math.Min(selPoint.X, p.X);
-                int y = Math.Min(selPoint.Y, p.Y);
-                int w = Math.Abs(p.X - selPoint.X);
-                int h = Math.Abs(p.Y - selPoint.Y);
-                mRect = new Rectangle(x, y, w, h);
+                int x = Math.Min(rectPoint.X, p.X);
+                int y = Math.Min(rectPoint.Y, p.Y);
+                int w = Math.Abs(p.X - rectPoint.X);
+                int h = Math.Abs(p.Y - rectPoint.Y);
+                myRect = new Rectangle(x, y, w, h);
                 this.Invalidate();
             }
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            selPoint = e.Location;
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            var location = e.Location;
-            int y = location.Y;
-      
+            rectPoint = e.Location;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(Pens.Gray, mRect);
+            e.Graphics.DrawRectangle(Pens.Gray, myRect);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            GetAllControl(this, list);
+        }
+        private string ListOfElements()
+        {
+            string str = "";
+            for (int i = 0; i < list.Count; i++)
+            {
+                str += list[i].Name + "\n";
+            }
+            return str;
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show(ListOfElements());
         }
     }
 }
