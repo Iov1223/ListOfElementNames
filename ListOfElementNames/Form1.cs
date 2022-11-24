@@ -56,12 +56,12 @@ namespace ListOfElementNames
         }
         private string ListOfElements()
         {
-            string str = "";
+            string _tmp = "";
             for (int i = 0; i < list.Count; i++)
             {
-                str += list[i].Name + "\n";
+                _tmp += list[i].Name + "\n";
             }
-            return str;
+            return _tmp;
         }
 
         private void Form1_MouseUp(object sender, MouseEventArgs e)
