@@ -59,7 +59,10 @@ namespace ListOfElementNames
             string _tmp = "";
             for (int i = 0; i < list.Count; i++)
             {
-                _tmp += list[i].Name + "\n";
+                if (myRect.Contains(list[i].Location))
+                {
+                    _tmp += list[i].Name + "\n";
+                }
             }
             return _tmp;
         }
