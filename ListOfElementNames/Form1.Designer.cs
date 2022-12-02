@@ -31,12 +31,14 @@
             this.buttonButton = new System.Windows.Forms.Button();
             this.buttonSmallButton = new System.Windows.Forms.Button();
             this.buttonBigButton = new System.Windows.Forms.Button();
-            this.textBoxSortsOfNonsense = new System.Windows.Forms.TextBox();
-            this.textBoxMoreNonsense = new System.Windows.Forms.TextBox();
-            this.textBoxIDontKnowWhatToCallIt = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.labelSomeInput = new System.Windows.Forms.Label();
             this.labelSomeInputAgain = new System.Windows.Forms.Label();
             this.labelAndThisIsNoException = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonButton
@@ -66,26 +68,29 @@
             this.buttonBigButton.Text = "Кнопище";
             this.buttonBigButton.UseVisualStyleBackColor = true;
             // 
-            // textBoxSortsOfNonsense
+            // textBox5
             // 
-            this.textBoxSortsOfNonsense.Location = new System.Drawing.Point(260, 76);
-            this.textBoxSortsOfNonsense.Name = "textBoxSortsOfNonsense";
-            this.textBoxSortsOfNonsense.Size = new System.Drawing.Size(311, 22);
-            this.textBoxSortsOfNonsense.TabIndex = 3;
+            this.textBox5.Location = new System.Drawing.Point(261, 362);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(363, 22);
+            this.textBox5.TabIndex = 3;
+            this.textBox5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox5_MouseDoubleClick);
             // 
-            // textBoxMoreNonsense
+            // textBox4
             // 
-            this.textBoxMoreNonsense.Location = new System.Drawing.Point(260, 211);
-            this.textBoxMoreNonsense.Name = "textBoxMoreNonsense";
-            this.textBoxMoreNonsense.Size = new System.Drawing.Size(311, 22);
-            this.textBoxMoreNonsense.TabIndex = 4;
+            this.textBox4.Location = new System.Drawing.Point(261, 269);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(311, 22);
+            this.textBox4.TabIndex = 4;
+            this.textBox4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox4_MouseDoubleClick);
             // 
-            // textBoxIDontKnowWhatToCallIt
+            // textBox3
             // 
-            this.textBoxIDontKnowWhatToCallIt.Location = new System.Drawing.Point(260, 352);
-            this.textBoxIDontKnowWhatToCallIt.Name = "textBoxIDontKnowWhatToCallIt";
-            this.textBoxIDontKnowWhatToCallIt.Size = new System.Drawing.Size(364, 22);
-            this.textBoxIDontKnowWhatToCallIt.TabIndex = 5;
+            this.textBox3.Location = new System.Drawing.Point(260, 211);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(311, 22);
+            this.textBox3.TabIndex = 5;
+            this.textBox3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox3_MouseDoubleClick);
             // 
             // labelSomeInput
             // 
@@ -117,17 +122,35 @@
             this.labelAndThisIsNoException.TabIndex = 8;
             this.labelAndThisIsNoException.Text = "И это поле не является исключением:";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(260, 135);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(311, 22);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDoubleClick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(260, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(312, 22);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.labelAndThisIsNoException);
             this.Controls.Add(this.labelSomeInputAgain);
             this.Controls.Add(this.labelSomeInput);
-            this.Controls.Add(this.textBoxIDontKnowWhatToCallIt);
-            this.Controls.Add(this.textBoxMoreNonsense);
-            this.Controls.Add(this.textBoxSortsOfNonsense);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.buttonBigButton);
             this.Controls.Add(this.buttonSmallButton);
             this.Controls.Add(this.buttonButton);
@@ -148,12 +171,14 @@
         private System.Windows.Forms.Button buttonButton;
         private System.Windows.Forms.Button buttonSmallButton;
         private System.Windows.Forms.Button buttonBigButton;
-        private System.Windows.Forms.TextBox textBoxSortsOfNonsense;
-        private System.Windows.Forms.TextBox textBoxMoreNonsense;
-        private System.Windows.Forms.TextBox textBoxIDontKnowWhatToCallIt;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label labelSomeInput;
         private System.Windows.Forms.Label labelSomeInputAgain;
         private System.Windows.Forms.Label labelAndThisIsNoException;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

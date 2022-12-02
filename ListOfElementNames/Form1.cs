@@ -14,11 +14,23 @@ namespace ListOfElementNames
         private Point rectPoint;
         private Rectangle myRect;
         private List<Control> list = new List<Control>();
+        private List<Control> textBox = new List<Control>();
         private void GetAllControl(Control c, List<Control> list)
         {
             foreach (Control control in c.Controls)
             {
                 list.Add(control);
+            }
+        }
+        private void GetAllTextBox(Control tb, List<Control> textBox)
+        {
+            foreach (Control _textBox in tb.Controls)
+            {
+                if (_textBox is TextBox)
+                {
+                    textBox.Add(_textBox);
+                }
+                
             }
         }
         public Form1()
@@ -53,20 +65,63 @@ namespace ListOfElementNames
         private void Form1_Load(object sender, EventArgs e)
         {
             GetAllControl(this, list);
+            GetAllTextBox(this, textBox);
         }
         private string ListOfElements()
         {
             string _tmp = "";
             for (int i = 0; i < list.Count; i++)
             {
-                _tmp += list[i].Name + "\n";
+                if (myRect.Contains(list[i].Location))
+                {
+                    _tmp += list[i].Name + "\n";
+                }
             }
             return _tmp;
         }
-
+        // textBox
+        private void fromTextBoxToClipboard()
+        {
+            string _tmp = "";
+            for (int i = 0; i < textBox.Count; i++)
+            {
+                if (myRect.Contains(textBox[i].Location))
+                {
+                    _tmp += textBox[i].Text + "\n";
+                }
+            }
+            Clipboard.SetText(_tmp);
+        }
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
             MessageBox.Show(ListOfElements());
+            fromTextBoxToClipboard();
+        
+        }
+        
+        private void textBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox1.Text = textBox1.Text + Clipboard.GetText();
+        }
+
+        private void textBox2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox2.Text = textBox2.Text + Clipboard.GetText();
+        }
+
+        private void textBox3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox3.Text = textBox3.Text + Clipboard.GetText();
+        }
+
+        private void textBox4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox4.Text = textBox4.Text + Clipboard.GetText();
+        }
+
+        private void textBox5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBox5.Text = textBox5.Text + Clipboard.GetText();
         }
     }
 }
