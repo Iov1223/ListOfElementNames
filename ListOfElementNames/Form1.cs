@@ -79,7 +79,7 @@ namespace ListOfElementNames
             }
             return _tmp;
         }
-        // textBox
+
         private void fromTextBoxToClipboard()
         {
             string _tmp = "";
