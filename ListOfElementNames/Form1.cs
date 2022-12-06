@@ -83,14 +83,21 @@ namespace ListOfElementNames
         private void fromTextBoxToClipboard()
         {
             string _tmp = "";
-            for (int i = 0; i < textBox.Count; i++)
+            try
             {
-                if (myRect.Contains(textBox[i].Location))
+                for (int i = 0; i < textBox.Count; i++)
                 {
-                    _tmp += textBox[i].Text + "\n";
+                    if (myRect.Contains(textBox[i].Location))
+                    {
+                        _tmp += textBox[i].Text + "\n";
+                    }
                 }
+                Clipboard.SetText(_tmp);
             }
-            Clipboard.SetText(_tmp);
+            catch
+            {
+                MessageBox.Show("Буфер обмена пуст!");
+            }
         }
         private void Form1_MouseUp(object sender, MouseEventArgs e)
         {
